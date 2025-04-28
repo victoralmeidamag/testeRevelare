@@ -2,7 +2,15 @@
 
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\LogoutController;
+use App\Http\Middleware\AuthUser;
 use Illuminate\Support\Facades\Route;
+
+Route::middleware(['auth.user'])->group(function () {
+    Route::get('/inicio', function () {
+        return view('layouts.online.home');
+    })->name('online.home');
+});
+
 
 Route::get('/', function () {
     return view('layouts.offline.home');
@@ -25,10 +33,6 @@ Route::get('/register/steps', function () {
         'title' => 'Cadastro - Passo a Passo'
     ]);
 })->name('register.steps');
-
-Route::get('/inicio', function () {
-    return view('layouts.online.home');
-})->name('online.home');
 
 Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
 

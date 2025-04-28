@@ -16,9 +16,10 @@ class AuthUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->check()) {
+        if (Auth::check()) {
             return $next($request);
         }
-        return redirect()->route('offline.home')->with('error', 'Usuário não logado');
+
+        return redirect()->route('offline.home')->with('error', 'USUÁRIO NÃO LOGADO');
     }
 }

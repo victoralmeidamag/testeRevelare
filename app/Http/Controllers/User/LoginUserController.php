@@ -16,7 +16,7 @@ class LoginUserController extends Controller
                 'password' => 'required',
             ]);
             $user = (new LoginUserService())->login($credentials);
-            return redirect()->route("online.home", compact('user'))->with("success","Bem vindo, $user->name");
+            return redirect()->route("online.home")->with("success","Bem vindo, $user->name");
         } catch (\Exception $e) {
             return redirect()->back()->with("error", $e->getMessage());
         }
