@@ -7,25 +7,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth.user'])->group(function () {
     Route::get('/inicio', function () {
-        return view('layouts.online.home');
+        return view('pages.online.home');
     })->name('online.home');
 });
 
 
 Route::get('/', function () {
-    return view('layouts.offline.home');
+    return view('pages.offline.home');
 });
 
 Route::get('/home', function () {
-    return view('layouts.offline.home');
+    return view('pages.offline.home');
 })->name('offline.home');
 
 Route::get('/login', function () {
-    return view('layouts.login');
+    return view('pages.login');
 })->name('login');
 
 Route::get('/register', function () {
-    return view('layouts.register');
+    return view('pages.register');
 })->name('register');
 
 Route::get('/register/steps', function () {
@@ -37,3 +37,15 @@ Route::get('/register/steps', function () {
 Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
 
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+Route::get('/profile/data', function(){
+    return view('pages.my-account.data');
+})->name('profile.data');
+
+Route::get('/profile/login-security', function(){
+    return view('pages.my-account.login-security');
+})->name('profile.login-security');
+
+Route::get('/profile/pre-bookings', function(){
+    return view('pages.my-account.pre-bookings');
+})->name('pre-bookings');
