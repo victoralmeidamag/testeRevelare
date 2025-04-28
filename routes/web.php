@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\User\LoginUserController;
+use App\Http\Controllers\User\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +31,5 @@ Route::get('/inicio', function () {
 })->name('online.home');
 
 Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
+
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
