@@ -123,4 +123,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'links' => [
+        'facebook' => env('FACEBOOK_LINK', 'https://www.revelare.com.br/'),
+        'linkedin' => env('LINKEDIN_LINK', 'https://www.revelare.com.br/'),
+        'instagram' => env('INSTAGRAM_LINK', 'https://www.revelare.com.br/')
+    ]
+
 ];

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\LoginUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,11 +9,11 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('layouts.offline.home');
-});
+})->name('offline.home');
 
 Route::get('/login', function () {
     return view('layouts.login');
-});
+})->name('login');
 
 Route::get('/register', function () {
     return view('layouts.register');
@@ -23,3 +24,9 @@ Route::get('/register/steps', function () {
         'title' => 'Cadastro - Passo a Passo'
     ]);
 })->name('register.steps');
+
+Route::get('/inicio', function () {
+    return view('layouts.online.home');
+})->name('online.home');
+
+Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
