@@ -14,7 +14,7 @@
             <div class="text-center mt-4 mb-6">
                 <p class="text-sm">
                     Já tem um conta?
-                    <a href="#" class="text-black font-medium hover:underline">Faça o Login</a>
+                    <a href="{{ route('login') }}" class="text-black font-medium hover:underline">Faça o Login</a>
                 </p>
             </div>
             <button

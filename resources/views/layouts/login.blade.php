@@ -3,16 +3,18 @@
 @section('title', 'Página Inicial')
 
 @section('content')
-<div class="flex justify-center items-center min-h-[calc(100vh-200px)] bg-white"> <!-- Removi px-4 -->
-    <div class="w-full max-w-md mx-4"> <!-- Container com margem lateral responsiva -->
+<div class="flex justify-center items-center min-h-[calc(100vh-200px)] bg-white">
+    <div class="w-full max-w-md mx-4"> 
         <h1 class="text-3xl font-bold mb-8">Faça login</h1>
         
-        <form class="w-full"> <!-- Garante que o formulário não ultrapasse a largura -->
+        <form class="w-full" method="POST" action="{{ route('form.login') }}"> 
+            @csrf
             <div class="mb-6">
                 <label for="email" class="block text-sm font-medium mb-2">E-mail</label>
                 <input 
-                    type="email" 
+                    type="email"
                     id="email" 
+                    name="email"
                     placeholder="Digite seu e-mail" 
                     class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-200 focus:outline-none"
                     required>
@@ -22,7 +24,8 @@
                 <label for="password" class="block text-sm font-medium mb-2">Senha</label>
                 <input 
                     type="password" 
-                    id="password" 
+                    id="password"
+                    name="password"
                     placeholder="Digite sua senha" 
                     class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-200 focus:outline-none"
                     required>
@@ -42,7 +45,7 @@
         <div class="text-center mt-4 mb-6">
             <p class="text-sm">
                 Não tem uma conta? 
-                <a href="#" class="text-black font-medium hover:underline">Cadastre-se</a>
+                <a href="{{ route('register') }}" class="text-black font-medium hover:underline">Cadastre-se</a>
             </p>
         </div>
         
