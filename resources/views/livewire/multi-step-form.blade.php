@@ -1,5 +1,4 @@
 <div class="max-w-md mx-auto p-6">
-    <!-- Cabeçalho com progresso -->
     <div class="mb-8 text-center">
         <div class="text-gray-500 mb-1">Passo {{ $currentStep }} de {{ $totalSteps }}</div>
         <h2 class="text-2xl font-semibold mb-4">
@@ -11,10 +10,10 @@
         @if($currentStep === 1)
             <div>
                 <p class="text-gray-500 mb-2">Para começar, nos diga seu nome completo</p>
-                <input type="text" wire:model="nome_completo"
+                <input type="text" wire:model="full_name"
                     class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-black text-lg"
                     placeholder="Nome completo">
-                @error('nome_completo') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+                @error('full_name') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
         @endif
         @if($currentStep === 2)
@@ -56,10 +55,10 @@
         @if($currentStep === 6)
             <div>
                 <p class="text-gray-500 mb-2">Empresa em que trabalha (opcional)</p>
-                <input type="text" wire:model="job"
+                <input type="text" wire:model="firm"
                     class="w-full px-4 py-3 border-b border-gray-300 focus:outline-none focus:border-black text-lg"
                     placeholder="Nome da Empresa">
-                @error('job') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+                @error('firm') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
         @endif
         @if($currentStep === 7)
