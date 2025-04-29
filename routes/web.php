@@ -13,7 +13,7 @@ Route::middleware(['auth.user'])->group(function () {
 
 
 Route::get('/', function () {
-    return view('pages.offline.home');
+    return view('welcome');
 });
 
 Route::get('/home', function () {
@@ -33,6 +33,13 @@ Route::get('/register/steps', function () {
         'title' => 'Cadastro - Passo a Passo'
     ]);
 })->name('register.steps');
+
+Route::get('/register/shed/steps', function () {
+    return view('layouts.register-shed-steps', [
+        'title' => 'Cadastro Galpão- Passo a Passo',
+        'layout' => Auth::check() ? 'layouts.online.principal' : 'layouts.offline.principal'
+    ]);
+})->name('register-shed.steps');
 
 Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
 
