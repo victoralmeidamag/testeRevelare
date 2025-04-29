@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\LogoutController;
-use App\Http\Middleware\AuthUser;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth.user'])->group(function () {
@@ -11,6 +10,9 @@ Route::middleware(['auth.user'])->group(function () {
     })->name('online.home');
 });
 
+Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
+
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,9 +43,6 @@ Route::get('/register/shed/steps', function () {
     ]);
 })->name('register-shed.steps');
 
-Route::post('/login', [LoginUserController::class, 'index'])->name('form.login');
-
-Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/profile/data', function(){
     return view('pages.my-account.data');

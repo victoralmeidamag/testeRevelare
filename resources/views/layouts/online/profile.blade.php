@@ -7,7 +7,6 @@
     <h1 class="text-2xl font-bold mb-8">Minha conta</h1>
     
     <div class="flex flex-col md:flex-row gap-8">
-        <!-- Menu lateral -->
         <div class="w-full md:w-64 bg-gray-100 p-4">
             <nav>
                 <ul>

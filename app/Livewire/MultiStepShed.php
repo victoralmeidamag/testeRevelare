@@ -47,7 +47,6 @@ class MultiStepShed extends Component
 
     public function mount()
     {
-        // Initialize with default values if needed
     }
 
     public function render()
@@ -57,7 +56,6 @@ class MultiStepShed extends Component
 
     public function nextStep()
     {
-        // Validation can be added here for each step
         if ($this->currentStep < $this->totalSteps) {
             $this->currentStep++;
         }
@@ -71,13 +69,9 @@ class MultiStepShed extends Component
     }
 
     public function submit()
-    {
-        // Save the warehouse information to the database
-        // Redirect or show success message
-        
+    {        
         session()->flash('message', 'Espaço publicado com sucesso!');
         
-        // Redirect to dashboard or listing page
         return redirect()->to('/dashboard');
     }
 

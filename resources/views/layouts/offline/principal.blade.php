@@ -11,7 +11,6 @@
 </head>
 
 <body class="flex flex-col min-h-screen">
-    <!-- Notificação Global -->
     <div 
         x-data="notification"
         x-show="show"

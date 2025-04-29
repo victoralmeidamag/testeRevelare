@@ -3,7 +3,7 @@
 @section('title', 'Página Inicial')
 
 @section('content')
-    <div class="content flex justify-center items-center min-h-[calc(100vh-200px)] bg-white"> <!-- Removi px-4 -->
+    <div class="content flex justify-center items-center min-h-[calc(100vh-200px)] bg-white">
         <div class="w-full max-w-md mx-4">
             <h1 class="text-center text-3xl font-bold mb-8">Registre-se</h1>
             <a href="{{ route('register.steps') }}" 

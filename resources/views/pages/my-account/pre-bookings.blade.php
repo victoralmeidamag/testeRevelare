@@ -4,7 +4,6 @@
 <div class="w-full md:flex-1">
     <h2 class="text-xl font-semibold mb-6">Minhas pré-reservas</h2>
     
-    <!-- Abas de status -->
     <div class="mb-6 border-b">
         <div class="flex overflow-x-auto">
             <a href="#" class="px-4 py-2 font-medium border-b-2 border-black">Todas (5)</a>
@@ -14,7 +13,6 @@
         </div>
     </div>
     
-    <!-- Lista de pré-reservas -->
     <div class="space-y-6">
         @for ($i = 0; $i < 5; $i++)
         <div class="flex flex-col md:flex-row border-b pb-6">
