@@ -15,7 +15,7 @@ Route::post('/login', [LoginUserController::class, 'index'])->name('form.login')
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.offline.home');
 });
 
 Route::get('/home', function () {
