@@ -38,7 +38,7 @@
             </div>
         </div>
         
-        <a href="#" class="bg-black text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors">
+        <a href="{{ route('register-shed.steps') }}" class="bg-black text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-gray-800 transition-colors">
             ANUNCIE SEU GALPÃO
         </a>
     </div>
